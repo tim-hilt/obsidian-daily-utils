@@ -9,7 +9,9 @@ specifiers:
   builtin-modules: 3.3.0
   esbuild: 0.14.47
   eslint: ^8.30.0
+  eslint-plugin-unused-imports: ^2.0.0
   obsidian: latest
+  rimraf: ^3.0.2
   tslib: 2.4.0
   typescript: 4.7.4
 
@@ -22,7 +24,9 @@ devDependencies:
   builtin-modules: 3.3.0
   esbuild: 0.14.47
   eslint: 8.30.0
+  eslint-plugin-unused-imports: 2.0.0_awkxsbkvjdl3obsxjtckbdmzze
   obsidian: 1.1.1_vjzlf2p7teqc7dr74qmw2j2h6i
+  rimraf: 3.0.2
   tslib: 2.4.0
   typescript: 4.7.4
 
@@ -593,6 +597,26 @@ packages:
   /escape-string-regexp/4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /eslint-plugin-unused-imports/2.0.0_awkxsbkvjdl3obsxjtckbdmzze:
+    resolution: {integrity: sha512-3APeS/tQlTrFa167ThtP0Zm0vctjr4M44HMpeg1P4bK6wItarumq0Ma82xorMKdFsWpphQBlRPzw/pxiVELX1A==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      eslint: ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.29.0_wk274atk3a6gl2itgxqsfsecvm
+      eslint: 8.30.0
+      eslint-rule-composer: 0.3.0
+    dev: true
+
+  /eslint-rule-composer/0.3.0:
+    resolution: {integrity: sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==}
+    engines: {node: '>=4.0.0'}
     dev: true
 
   /eslint-scope/5.1.1:
