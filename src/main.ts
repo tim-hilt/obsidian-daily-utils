@@ -6,6 +6,7 @@ import {
 	getWorkedHoursTable,
 	getWorklogHours,
 } from "./calculate-sum";
+import { sortTodos } from "./sort-todos";
 
 const NOTIFICATION_TIME = 4000;
 
@@ -38,7 +39,19 @@ export default class DailyUtils extends Plugin {
 		this.app.vault.modify(activeFile, modifiedFileContent);
 	}
 
-	async sortTodos() {}
+	async sortTodos() {
+		const activeFile = this.app.workspace.getActiveFile();
+
+		if (activeFile === null) {
+			new Notice("No file opened", NOTIFICATION_TIME);
+			return;
+		}
+
+		const activeFileContent = await this.app.vault.read(activeFile);
+		const modifiedFileContent = sortTodos(activeFileContent);
+
+		this.app.vault.modify(activeFile, modifiedFileContent);
+	}
 
 	async onload() {
 		this.addCommand({

@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "pnpm clean && node esbuild.config.mjs",
 		"build": "pnpm clean && tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
-		"clean": "rimraf main.js"
+		"clean": "rimraf main.js",
+		"test": "vitest"
 	},
 	"license": "MIT",
 	"devDependencies": {
@@ -22,6 +23,8 @@
 		"obsidian": "latest",
 		"rimraf": "^3.0.2",
 		"tslib": "2.4.0",
-		"typescript": "4.7.4"
+		"typescript": "4.7.4",
+		"vite": "^4.0.3",
+		"vitest": "^0.26.2"
 	}
 }
