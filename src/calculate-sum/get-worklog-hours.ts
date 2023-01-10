@@ -8,8 +8,10 @@ export const getWorklogHours = (table: Array<string>): string => {
 	for (let r = 0; r < table.length; r++) {
 		// prettier-ignore
 		const [hours, minutes] = table[r].split("|")[TIME_COL_INDEX]
-      .trim().split(":");
-		workedMinutes += parseInt(hours) * MINUTES_IN_HOUR + parseInt(minutes);
+      .trim().split(":").map(x => parseInt(x));
+		if (!isNaN(hours) && !isNaN(minutes)) {
+			workedMinutes += hours * MINUTES_IN_HOUR + minutes;
+		}
 	}
 
 	const hours = Math.floor(workedMinutes / MINUTES_IN_HOUR);
